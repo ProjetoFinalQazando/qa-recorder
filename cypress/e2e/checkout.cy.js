@@ -26,7 +26,7 @@ telas.forEach(dispositivos => {
             }
         }) 
 
-         it('Validando botao voltar atraves da tela de checkout', () =>{
+         it('Validando url strip ao tentar fazer upgrade', () =>{
             portal_usuarioPage.acessarUrlLogin()
             portal_usuarioPage.preencherLogin(userFreeVencido)
             portal_usuarioPage.preencherSenha(passwordDefault)
