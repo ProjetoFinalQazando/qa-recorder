@@ -24,7 +24,7 @@ const elements = {
 export default{
 
     acessarUrlLogin(){
-        cy.visit('/')
+        cy.visit('/auth')
     },
 
     preencherLogin(login){
