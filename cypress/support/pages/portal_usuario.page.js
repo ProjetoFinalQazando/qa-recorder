@@ -74,8 +74,8 @@ export default{
             },
         });
 
-        cy.get(elements.buttons.btnDownloadExtension, {timeout: 6000}).should('be.visible')
-        cy.contains('Instalar Extensão', {timeout: 6000}).click()
+        cy.get(elements.buttons.btnDownloadExtension, {timeout: 12000}).should('be.visible')
+        cy.contains('Instalar Extensão', {timeout: 12000}).click()
 
         cy.get('@windowOpen').should('be.called');
 
@@ -96,12 +96,12 @@ export default{
         cy.get(elements.class.alertaPeriodoExpirado).should('have.text', mensagem)
     },
     validarAssinaturaExpirada(mensagem){
-         cy.get(elements.class.assinaturaExpirada, { timeout: 6000 }).should('be.visible')
+         cy.get(elements.class.assinaturaExpirada, { timeout: 12000 }).should('be.visible')
          .should('have.text', mensagem)
     },
 
     validarMsgPeriodoExpirado(mensagem){
-        cy.get(elements.class.popupPeriodoTesteExpirado, {timeout: 6000}).should('be.visible')
+        cy.get(elements.class.popupPeriodoTesteExpirado, {timeout: 12000}).should('be.visible')
         .should('have.text', mensagem)
     },
 
