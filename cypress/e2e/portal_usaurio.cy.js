@@ -18,6 +18,9 @@ const alertaPeriodoExpirado = '⏰ Seu período de teste gratuito de 3 dias expi
 const alertaperiodoDeTesteExpirado = '⏰ Período de Teste Expirado'
 const msgAssinaturaExpirada = '💳 Assinatura Expirada'
 
+//URL
+const urlChromeWebStore = 'https://chromewebstore.google.com/detail/qa-test-recorder/aoiibokbpblimjokjhdphikaifonccoh'
+
 
 
 telas.forEach(dipositivos => {
@@ -60,7 +63,7 @@ telas.forEach(dipositivos => {
             portal_usuarioPage.preencherSenha(passwordDefault)
             portal_usuarioPage.clicarNoBotaoEntrar()
             portal_usuarioPage.clicarEmBaixarExtensao()
-            portal_usuarioPage.validarExibicaoMsgDownload(preparandoDownload)
+            portal_usuarioPage.clicarEmBaixarExtensaoUrlChrome(urlChromeWebStore)
         })
 
         it('Verificar status usuario free vencido', () => {
@@ -124,8 +127,7 @@ telas.forEach(dipositivos => {
             portal_usuarioPage.preencherLogin(userBoletoVencido)
             portal_usuarioPage.preencherSenha(passwordDefault)
             portal_usuarioPage.clicarNoBotaoEntrar()
-            portal_usuarioPage.clicarEmBaixarExtensao()
-            portal_usuarioPage.validarExibicaoMsgDownload(preparandoDownload)
+            portal_usuarioPage.clicarEmBaixarExtensaoUrlChrome(urlChromeWebStore)
         })
 
     });
