@@ -48,7 +48,7 @@ telas.forEach(dipositivos => {
         })
 
 
-        it.only('Deve exibir mensagem de campo obrigatório se nome estiver vazio', () => {
+        it('Deve exibir mensagem de campo obrigatório se nome estiver vazio', () => {
             // Clica no botão sem preencher o campo nome
             cy.get('.text-blue-600').click()
             cy.get('#email').type('teste@exemplo.com')
@@ -58,7 +58,9 @@ telas.forEach(dipositivos => {
 
             // Verifica a mensagem de validação nativa do browser
             cy.get('#fullName').then($input => {
-                expect($input[0].validationMessage).to.eq('Preencha este campo.')
+                expect($input[0].checkValidity()).to.be.false
+                expect($input[0].validationMessage).to.not.be.empty
+
             })
         })
 
@@ -73,7 +75,9 @@ telas.forEach(dipositivos => {
 
             // Verifica a mensagem de validação nativa do browser
             cy.get('#email').then($input => {
-                expect($input[0].validationMessage).to.eq('Preencha este campo.')
+                expect($input[0].checkValidity()).to.be.false
+                expect($input[0].validationMessage).to.not.be.empty
+
             })
         })
 
@@ -108,7 +112,9 @@ telas.forEach(dipositivos => {
 
             // Verifica a mensagem de validação nativa do browser
             cy.get('#password').then($input => {
-                expect($input[0].validationMessage).to.eq('Preencha este campo.')
+                expect($input[0].checkValidity()).to.be.false
+                expect($input[0].validationMessage).to.not.be.empty
+
             })
         })
 

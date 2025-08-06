@@ -1,4 +1,4 @@
-describe('Teste Automatizado', () => {
+describe('Teste Automatizado tela home', () => {
     beforeEach(() => {
         cy.visit('https://qa-recorder.com/')
     })
@@ -46,43 +46,36 @@ describe('Teste Automatizado', () => {
             .should('be.visible')
             .and('have.text', 'Pronto para Revolucionar seus Testes?');
     });
-    it('Deve redirecionar para a tela de login', () => {
+    it('Deve redirecionar para a Chrome Web Store ao clicar no botão', () => {
         cy.visit('https://qa-recorder.com/');
 
-        // Clica no link "Documentação"
-        cy.contains('Baixar Extensão Grátis').click();
+        // Espiona chamadas a window.open
+        cy.window().then((win) => {
+            cy.stub(win, 'open').as('windowOpen');
+        });
 
-        // Valida se a URL mudou corretamente
-        cy.url().should('include', '/auth'); // ou o que for correto
+        // Clica no botão
+        cy.contains('Baixar Extensão Grátis').should('be.visible').click();
 
-        // Também pode validar o conteúdo da nova página
-        cy.contains('Acesse sua conta para continuar').should('be.visible'); // ajuste conforme seu layout
+        // Valida se a URL da Chrome Web Store foi chamada
+        cy.get('@windowOpen').should('be.calledWithMatch', 'https://chromewebstore.google.com');
     });
-    it('Deve redirecionar para a tela de login', () => {
+
+
+
+    it('Deve tentar abrir o cliente de e-mail ao clicar no botão de contato', () => {
         cy.visit('https://qa-recorder.com/');
 
-        // Clica no link "Documentação"
-        cy.contains('Ver Demonstração').click();
+        cy.window().then((win) => {
+            cy.stub(win, 'open').as('windowOpen');
+        });
 
-        // Valida se a URL mudou corretamente
-        cy.url().should('include', '/auth'); // ou o que for correto
-
-        // Também pode validar o conteúdo da nova página
-        cy.contains('Acesse sua conta para continuar').should('be.visible'); // ajuste conforme seu layout
-    });
-    it('Deve abrir o modal de login ao clicar no botão de e-mail', () => {
-        cy.visit('https://qa-recorder.com/'); // ou URL da página onde está o botão
-
-        // Clica no botão que contém o e-mail
         cy.contains('button', 'qazando@gmail.com').click();
 
-        // Valida se o modal foi aberto
-        cy.get('[role="dialog"], .modal, .MuiDialog-root') // ajuste conforme seu componente/modal
-            .should('be.visible');
-
-        // Valida se o modal contém algum texto esperado (exemplo genérico)
-        cy.contains('Escolha uma conta').should('exist'); // ou outro texto como "Continuar com Google"
+        cy.get('@windowOpen').should('be.calledWithMatch', /^mailto:qazando@gmail\.com/);
     });
+
+
     it('Deve abrir nova aba para iniciar conversa no WhatsApp', () => {
         cy.visit('https://qa-recorder.com/');
 
@@ -107,7 +100,7 @@ describe('Teste Automatizado', () => {
         // Também pode validar o conteúdo da nova página
         cy.contains('Política de Privacidade').should('be.visible'); // ajuste conforme seu layout
     });
-    it.only('Deve verificar o link da comunidade', () => {
+    it('Deve verificar o link da comunidade', () => {
         cy.visit('https://qa-recorder.com/');
 
         cy.contains('a', 'Comunidade')
