@@ -63,7 +63,28 @@ export default{
 
     clicarEmBaixarExtensao(){
         cy.get(elements.buttons.btnDownloadExtension).should('be.visible')
-        cy.contains('Baixar Extensão').click()
+        cy.contains('Instalar Extensão').click()
+    },
+
+    clicarEmBaixarExtensaoUrlChrome(urlChromeStore){
+        //acessando novamente para recarregar a pagina e ser possivel fazer o stub da pagina aberta
+        cy.visit('https://qa-recorder.com/', {
+            onBeforeLoad(win) {
+                cy.stub(win, 'open').as('windowOpen');
+            },
+        });
+
+        cy.get(elements.buttons.btnDownloadExtension, {timeout: 6000}).should('be.visible')
+        cy.contains('Instalar Extensão', {timeout: 6000}).click()
+
+        cy.get('@windowOpen').should('be.called');
+
+        cy.get('@windowOpen').then((stub) => {
+            const url = stub.getCall(0).args[0];
+
+            expect(url).to.include(urlChromeStore);
+            cy.log('URL GERADA CORRETAMENTE', urlChromeStore)
+        })
     },
 
     validarExibicaoMsgDownload(mensagem){
@@ -75,12 +96,12 @@ export default{
         cy.get(elements.class.alertaPeriodoExpirado).should('have.text', mensagem)
     },
     validarAssinaturaExpirada(mensagem){
-         cy.get(elements.class.assinaturaExpirada).should('be.visible')
+         cy.get(elements.class.assinaturaExpirada, { timeout: 6000 }).should('be.visible')
          .should('have.text', mensagem)
     },
 
     validarMsgPeriodoExpirado(mensagem){
-        cy.get(elements.class.popupPeriodoTesteExpirado).should('be.visible')
+        cy.get(elements.class.popupPeriodoTesteExpirado, {timeout: 6000}).should('be.visible')
         .should('have.text', mensagem)
     },
 

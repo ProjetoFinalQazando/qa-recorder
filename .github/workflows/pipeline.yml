@@ -1,7 +1,9 @@
 name: Cypress API Tests
 on: 
     pull_request:
-        branches: [dev]
+        branches: 
+        - 'main'
+        - 'dev'
 jobs:
     cypress-run:
         runs-on: ubuntu-latest
