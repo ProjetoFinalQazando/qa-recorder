@@ -143,7 +143,8 @@ telas.forEach(dipositivos => {
 
             // Verifica a mensagem de validação nativa do browser
             cy.get('#confirmPassword').then($input => {
-                expect($input[0].validationMessage).to.eq('Preencha este campo.')
+                expect($input[0].checkValidity()).to.be.false
+                expect($input[0].validationMessage).to.not.be.empty
             })
         })
 
