@@ -1,3 +1,40 @@
+# Sobre o Projeto
+
+Este projeto foi desenvolvido como parte de uma iniciativa voluntária para testar a ferramenta da Qazando (em fase Alpha), voltada para a gestão de casos de teste. O objetivo foi permitir que os alunos colocassem em prática os conhecimentos adquiridos durante a Masterclass da Qazando, ao longo de 3 meses de desenvolvimento.
+
+Durante o projeto, realizamos testes manuais e automação de testes em um site disponibilizado para a turma, simulando um cenário real de QA.
+
+<br>
+
+# 🛠 Tecnologias e Ferramentas Utilizadas
+
+* Cypress – Automação de testes Web.
+* Trello – Organização das tarefas em formato Kanban e report de bugs.
+* Ferramenta da Qazando – Gestão dos casos de teste manuais (tool.qazando.com.br).
+* GitHub – Armazenamento e versionamento da automação.
+* Metodologia Ágil – Com reuniões weekly às terças e quintas para acompanhamento das tarefas.
+
+ <br>
+
+# Objetivo
+O principal objetivo foi praticar o ciclo completo de QA , desda  a criação e execução de casos de teste manuais até o desenvolvimento de testes automatizados simulando a rotina de um time de qualidade dentro de um projeto real.
+
+<br>
+
+👥 Equipe do Projeto
+
+| Avatar            							| integrante         | Função           		| GitHub                                                      | LinkedIn                                              |
+| -------------------------------------------- | ---------------- | ---------------- | -------------------------------------------------------------- | ----------------------------------------------------- |
+| <img src = "" width="60" >|__Michael Felipe__| *QA* | [![](https://bit.ly/3f9Xo0P)](https://github.com/Michaelfss/Michaelfss) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/michael-felipe-573b64167) |
+| <img src = "" width="60" >|__Karen Silveira__| *QA* | [![](https://bit.ly/3f9Xo0P)](https://github.com/karennsilveiraa)      | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/karensilveiradacunha/) |
+| <img src = "" width="60" >|__Juliana Guedes__| *QA* | [![](https://bit.ly/3f9Xo0P)](https://github.com/julianaguedes) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/julianagueds/) |
+| <img src = "" width="60" >|__Anderson Asain__| *QA* | [![](https://bit.ly/3f9Xo0P)]() | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/anderson-araujo-9b0207236/) |
+| <img src = "" width="60" >|__Maxian Muller__| *QA* | [![](https://bit.ly/3f9Xo0P)](https://github.com/Maxianrodrigues) | [![](https://bit.ly/2P1ZogM)](https://www.linkedin.com/in/maxian-muller-14a30437/) |
+
+
+
+<br>
+
 # qa-recorder
 Projeto final da Marterclass 2025 Grupo - 2
 
