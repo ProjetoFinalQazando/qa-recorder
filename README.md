@@ -17,7 +17,7 @@ Durante o projeto, realizamos testes manuais e automação de testes em um site 
  <br>
 
 # Objetivo
-O principal objetivo foi praticar o ciclo completo de QA , desda  a criação e execução de casos de teste manuais até o desenvolvimento de testes automatizados simulando a rotina de um time de qualidade dentro de um projeto real.
+Nosso maior objetivo foi ir além da teoria e viver, na prática, o ciclo completo de QA — criando e executando casos de teste manuais, desenvolvendo testes automatizados e simulando a rotina de um time de qualidade em um cenário real. Uma jornada de aprendizado, colaboração e evolução profissional.
 
 <br>
 
@@ -36,14 +36,15 @@ O principal objetivo foi praticar o ciclo completo de QA , desda  a criação e 
 <br>
 
 # qa-recorder
-Projeto final da Marterclass 2025 Grupo - 2
+Projeto final da Marterclass 2025 Grupo - 2 <br>
+Período projeto de Junho/2025 - Agosto/2025
 
+<br>
 
-
-Instalação do Cypress
+# Instalação do Cypress
 O Cypress pode ser instalado de diferentes formas, dependendo do seu ambiente e necessidades. A seguir, apresento um passo a passo para instalar e configurar o Cypress corretamente.
 
-🛠️ Pré-requisitos
+# 🛠️ Pré-requisitos
 Antes de instalar o Cypress, certifique-se de que possui os seguintes requisitos instalados:
 
 ✅ Node.js (Versão recomendada: LTS) → [Baixar aqui](https://nodejs.org/pt/download) <br>
